@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exam</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Login to Take Exam</h2>
+
+  <div id="login-section">
+    <label>Username:
+      <input type="text" id="username" autocomplete="off" list="user-list" />
+      <datalist id="user-list"></datalist>
+    </label><br>
+
+    <label>Password:
+      <input type="password" id="password" />
+    </label><br>
+
+    <button id="login-btn">Login</button>
+    <p id="login-error" style="color:red;"></p>
+  </div>
+
+  <div id="exam-container" style="display:none;">
+    <p><strong>Time Left:</strong> <span id="timer">300</span> seconds</p>
+    <div id="question-box"></div>
+    <button id="prev-btn">Previous</button>
+    <button id="next-btn">Next</button>
+    <button id="submit-btn" style="display:none;">Submit</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
