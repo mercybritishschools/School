@@ -1,9 +1,9 @@
 // 🔸 Predefined users and passwords
 const users = {
-  "Ali": "pass123",
-  "Ngozi": "pass456",
-  "Ada": "pass789",
-  "David": "davidpass"
+  "Favour1": "pass123",
+  "Favour2": "pass456",
+  "Pretty": "pass789",
+  "David": "pass012"
 };
 
 // 🔸 Predefined lesson notes by subject
