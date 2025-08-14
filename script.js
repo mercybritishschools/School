@@ -16,8 +16,33 @@ const lessonNotes = {
 
 // 🔸 Questions
 const questions = [
-  { q: "2 + 2 = ?", options: ["3", "4", "5", "6"], answer: 1 },
-  { q: "Capital of Nigeria?", options: ["Lagos", "Abuja", "Enugu", "Kano"], answer: 1 }
+{ q: "What does a computer store?", options: ["data", "food", "fuel", "money"], answer: 1 },
+{ q: "Which of these is a computer storage unit?", options: ["bit", "bite", "boat", "bet"], answer: 1 },
+{ q: "Which of these is not a computer storage unit?", options: ["byte", "nibble", "niddle", "bit"], answer: 3 },
+{ q: "How many bits are there in a nibble?", options: ["8", "4", "2", "1/2"], answer: 2 },
+{ q: "How many bits are there in a byte?", options: ["8", "4", "2", "1/2"], answer: 1 },
+{ q: "How many nibbles are there in a byte?", options: ["8", "4", "2", "1/2"], answer: 3 },
+{ q: "How many bytes are there in a nibble?", options: ["8", "4", "2", "1/2"], answer: 4 },
+{ q: "How many bytes are there in a kilobyte?", options: ["11^2", "10^2", "2^10", "2^11"], answer: 3 },
+{ q: "How many bytes are there in a megabyte?", options: ["20^2", "2^20", "30^2", "2^30"], answer: 4 },
+{ q: "How many bytes are there in 7 kilobyte?", options: ["7168", "8176", "6718", "1876"], answer: 1 },
+{ q: "Which of the following is a storage device?", options: ["keyboard", "mouse", "monitor", "flash"], answer: 4 }, 
+{ q: "CD ROM is a ___ device.", options: ["input", "output", "storage", "processing"], answer: 3 }, 
+{ q: "x + 5 = 20. Find x", options: ["20", "15", "10", "5"], answer: 2 }, 
+{ q: "3x = 12. Find x", options: ["6", "5", "4", "3"], answer: 3 }, 
+{ q: "9/y = 3. Find y", options: ["6", "5", "4", "3"], answer: 4 }, 
+{ q: "m - 6 = 16. Find m", options: ["20", "21", "22", "23"], answer: 3 }, 
+{ q: "3 - n = 2. Find n", options: ["1", "2", "3", "4"], answer: 1 }, 
+{ q: "p/9 = 2. Find p", options: ["20", "18", "16", "12"], answer: 2 }, 
+{ q: "14 + a = 30. Find a", options: ["20", "18", "16", "12"], answer: 3 }, 
+{ q: "8z = 24. Find z", options: ["3", "6", "4", "8"], answer: 1 }, 
+{ q: "Cows _____ grass.", options: ["eat", "eats", "chews", "swallows"], answer: 1 }, 
+{ q: "A lion _____ in the forest.", options: ["live", "stay", "jump", "lives"], answer: 4 }, 
+{ q: "Obi _____ a boy.", options: ["is", "were", "have", "are"], answer: 1 }, 
+{ q: "Jack and Jill _____ bicycles.", options: ["has", "is", "does", "have"], answer: 4 }, 
+{ q: "Obedience _____ better than sacrifice.", options: ["are", "have", "is", "do"], answer: 3 },
+{ q: "2 + 2 = ?", options: ["3", "4", "5", "6"], answer: 1 },
+{ q: "Capital of Nigeria?", options: ["Lagos", "Abuja", "Enugu", "Kano"], answer: 1 }
 ];
 
 const studentsByClass = {
