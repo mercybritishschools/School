@@ -3,6 +3,20 @@
 <head>
   <title>Exam</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      background-color: #000; /* fallback color */
+      background-image: url('images/bg1.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  </style>
 </head>
 <body>
   <h1>MERCY BRITISH SCHOOLS</h1>
@@ -31,5 +45,27 @@
   </div>
 
   <script src="script.js"></script>
+
+  <script>
+    // Array of background images
+    const bgImages = [
+      'images/bg1.jpg',
+      'images/bg2.jpg',
+      'images/bg3.jpg',
+      'images/bg4.jpg'
+    ];
+
+    // Preload images
+    bgImages.forEach(src => { const img = new Image(); img.src = src; });
+
+    let index = 0;
+    function changeBackground() {
+      index = (index + 1) % bgImages.length;
+      document.body.style.backgroundImage = `url('${bgImages[index]}')`;
+    }
+
+    // Change background every 5 seconds
+    setInterval(changeBackground, 5000);
+  </script>
 </body>
 </html>
