@@ -112,24 +112,3 @@
   </script>
 </body>
 </html>
-
-
-
--
-      
-    ];
-
-    // Preload images
-    bgImages.forEach(src => { const img = new Image(); img.src = src; });
-
-    let index = 0;
-    function changeBackground() {
-      index = (index + 1) % bgImages.length;
-      document.body.style.backgroundImage = `url('${bgImages[index]}')`;
-    }
-
-    // Change background every 5 seconds
-    setInterval(changeBackground, 5000);
-  </script>
-</body>
-</html>
