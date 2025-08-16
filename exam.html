@@ -1,20 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Exam</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive -->
+  <title>Homework</title>
   <link rel="stylesheet" href="style.css">
   <style>
     html, body {
       height: 100%;
       margin: 0;
+      padding: 0;
     }
+
     body {
-      background-color: #000; /* fallback color */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      /* Background adjustments */
       background-image: url('IMG-20250717-WA0141.jpg');
-      background-size: cover;
-      background-position: center center;
+      background-size: contain;       /* show full image */
       background-repeat: no-repeat;
-      background-attachment: fixed;
+      background-position: center;
+      background-color: #000;         /* fills empty space */
+    }
+
+    /* Make content readable on all screens */
+    h1, h2 {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    #login-section, #exam-container {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 90%;
+      width: 400px;
+      box-sizing: border-box;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 8px;
+      margin: 6px 0;
+      font-size: 1em;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: #007BFF;
+      color: white;
+      border-radius: 6px;
+    }
+
+    button:hover {
+      background: #0056b3;
     }
   </style>
 </head>
@@ -47,10 +92,31 @@
   <script src="script.js"></script>
 
   <script>
-    // Array of background images
+    // 🔸 Background images array
     const bgImages = [
       'IMG-20250717-WA0141.jpg',
       'IMG-20250717-WA0142.jpg'
+    ];
+
+    // Preload images
+    bgImages.forEach(src => { const img = new Image(); img.src = src; });
+
+    let index = 0;
+    function changeBackground() {
+      index = (index + 1) % bgImages.length;
+      document.body.style.backgroundImage = `url('${bgImages[index]}')`;
+    }
+
+    // Change background every 5 seconds
+    setInterval(changeBackground, 5000);
+  </script>
+</body>
+</html>
+
+
+
+-
+      
     ];
 
     // Preload images
