@@ -22,3 +22,9 @@ th, td {
   padding: 8px;
   text-align: left;
 }
+#question-box label {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* space between radio and text */
+  margin-bottom: 8px;
+}
