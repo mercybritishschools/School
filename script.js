@@ -3,10 +3,12 @@ const users = {
   "Memeh Favour": "pass123",
   "Uzoma Favour": "pass456",
   "Destiny Pretty": "pass789",
-  "David": "pass012"
+  "David": "pass012",
+  "Ngozi": "pass111",
+  "Andrew David": "pass222"
 };
 
-// 🔸 Predefined lesson notes by subject
+// 🔸 Lesson Notes
 const lessonNotes = {
   "Mathematics": "Topic: Algebra – Solving linear equations with one variable.",
   "English": "Topic: Narrative Essay – Writing with structure and purpose.",
@@ -14,9 +16,15 @@ const lessonNotes = {
   "Civic Education": "Topic: Importance of National Values.",
 };
 
-// 🔸 Questions
-const questions = [
-{ q: "What does a computer store?", options: ["data", "food", "fuel", "money"], answer: 0 },
+// 🔸 Questions (grouped by class)
+const classQuestions = {
+  JSS1: [
+    { q: "What does a computer store?", options: ["data", "food", "fuel", "money"], answer: 0 },
+    { q: "Which of these is a computer storage unit?", options: ["bit", "bite", "boat", "bet"], answer: 0 },
+    { q: "Which of these is not a computer storage unit?", options: ["byte", "nibble", "niddle", "bit"], answer: 2 },
+  ],
+  JSS2: [
+    { q: "What does a computer store?", options: ["data", "food", "fuel", "money"], answer: 0 },
 { q: "Which of these is a computer storage unit?", options: ["bit", "bite", "boat", "bet"], answer: 0 },
 { q: "Which of these is not a computer storage unit?", options: ["byte", "nibble", "niddle", "bit"], answer: 2 },
 { q: "How many bits are there in a nibble?", options: ["8", "4", "2", "1/2"], answer: 1 },
@@ -40,14 +48,20 @@ const questions = [
 { q: "A lion _____ in the forest.", options: ["live", "stay", "jump", "lives"], answer: 3 }, 
 { q: "Obi _____ a boy.", options: ["is", "were", "have", "are"], answer: 0 }, 
 { q: "Jack and Jill _____ bicycles.", options: ["has", "is", "does", "have"], answer: 3 }, 
-{ q: "Obedience _____ better than sacrifice.", options: ["are", "have", "is", "do"], answer: 2 }
+{ q: "Obedience _____ better than sacrifice.", options: ["are", "have", "is", "do"], answer: 2 },
+  ],
+  JSS3: [
+    { q: "Cows _____ grass.", options: ["eat", "eats", "chews", "swallows"], answer: 0 },
+    { q: "A lion _____ in the forest.", options: ["live", "stay", "jump", "lives"], answer: 3 },
+    { q: "Jack and Jill _____ bicycles.", options: ["has", "is", "does", "have"], answer: 3 },
+  ]
+};
 
-];
-
+// 🔸 Student mapping
 const studentsByClass = {
   JSS1: ["Uzoma Favour", "Ngozi"],
   JSS2: ["Memeh Favour", "Andrew David"],
-  JSS 3: ["Destiny Pretty", "David"]
+  JSS3: ["Destiny Pretty", "David"]
 };
 
 // 🔸 INIT LOGIN PAGE
@@ -82,9 +96,12 @@ function startExam(username) {
   loginSection.style.display = "none";
   examContainer.style.display = "block";
 
+  const userClass = getClassForUser(username);
+  const questions = classQuestions[userClass] || [];
   let currentIndex = 0;
   let selectedAnswers = {};
   let timeLeft = 300;
+
   let timer = setInterval(() => {
     timeLeft--;
     document.getElementById("timer").textContent = timeLeft;
@@ -93,6 +110,7 @@ function startExam(username) {
 
   function renderQuestion() {
     const q = questions[currentIndex];
+    if (!q) return;
     let html = `<p><strong>Q${currentIndex + 1}:</strong> ${q.q}</p>`;
     q.options.forEach((opt, i) => {
       const checked = selectedAnswers[currentIndex] === i ? "checked" : "";
@@ -134,7 +152,7 @@ function startExam(username) {
 
     const result = {
       name: username,
-      class: getClassForUser(username),
+      class: userClass,
       score: score,
       time: new Date().toLocaleString()
     };
@@ -154,42 +172,4 @@ function getClassForUser(name) {
     if (studentsByClass[cls].includes(name)) return cls;
   }
   return "Unknown";
-}
-
-// 🔸 Render Results Page
-if (document.getElementById("result-table")) {
-  const results = JSON.parse(localStorage.getItem("results") || "[]");
-  const grouped = {};
-
-  results.forEach(r => {
-    if (!grouped[r.class]) grouped[r.class] = [];
-    grouped[r.class].push(r);
-  });
-
-  const container = document.getElementById("result-table");
-  for (let cls in grouped) {
-    let html = `<h3>${cls}</h3><table><tr><th>Name</th><th>Score</th><th>Time</th></tr>`;
-    grouped[cls].forEach(s => {
-      html += `<tr><td>${s.name}</td><td>${s.score}</td><td>${s.time}</td></tr>`;
-    });
-    html += "</table><br>";
-    container.innerHTML += html;
-  }
-}
-
-// 🔸 Download Excel
-function downloadExcel() {
-  const results = JSON.parse(localStorage.getItem("results") || "[]");
-  const worksheet = XLSX.utils.json_to_sheet(results);
-  const workbook = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(workbook, worksheet, "Results");
-  XLSX.writeFile(workbook, "exam_results.xlsx");
-}
-
-// 🔸 Populate Lesson Notes
-if (document.getElementById("lesson-notes")) {
-  const div = document.getElementById("lesson-notes");
-  for (let subject in lessonNotes) {
-    div.innerHTML += `<h3>${subject}</h3><p>${lessonNotes[subject]}</p>`;
-  }
 }
