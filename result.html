@@ -1,60 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Results</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Exam Results</h2>
-<div id="result-table"></div>
-
-<script>
-// 🔸 Load results from localStorage
-const results = JSON.parse(localStorage.getItem("results") || "[]");
-
-// Group results by class
-const grouped = {};
-results.forEach(r => {
-  if (!grouped[r.class]) grouped[r.class] = [];
-  grouped[r.class].push(r);
-});
-
-// Display results class by class
-const container = document.getElementById("result-table");
-for (let cls in grouped) {
-  const classDiv = document.createElement("div");
-  classDiv.innerHTML = `<h2>${cls}</h2>`;
-  
-  let table = `<table border="1" cellpadding="5" cellspacing="0" style="margin-bottom:20px; width:100%; border-collapse:collapse;">
-    <tr>
-      <th>Student Name</th>
-      <th>Subject</th>
-      <th>Score</th>
-    </tr>`;
-
-  grouped[cls].forEach(r => {
-    table += `<tr>
-      <td>${r.name}</td>
-      <td>${r.subject}</td>
-      <td>${r.score}</td>
-    </tr>`;
-  });
-
-  table += "</table>";
-  classDiv.innerHTML += table;
-  container.appendChild(classDiv);
-}
-</script>
-
-<!-- 🔸 Buttons for Print & Excel -->
-<div style="margin-top: 20px; text-align: center;">
-  <button onclick="window.print()">🖨️ Print Results</button>
-  <button onclick="downloadExcel()">⬇️ Download as Excel</button>
-</div>
-  
+  <h1>MERCY BRITISH SCHOOLS - Results</h1>
   <div id="result-table"></div>
 
-  <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+  <button onclick="window.print()">Print Results</button>
+  <button id="download-excel">Download as Excel</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
