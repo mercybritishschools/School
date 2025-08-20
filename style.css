@@ -1,30 +1,42 @@
 body {
   font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background: darkblue;
+  color: white;
+  padding: 10px;
+  margin: 0;
+}
+
+#login-section, #exam-container, #question-section {
+  margin: 20px auto;
+  max-width: 600px;
   padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
 }
 
-select, button, input {
-  margin: 10px;
-  padding: 5px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
-}
-
-table, th, td {
-  border: 1px solid black;
-}
-
-th, td {
-  padding: 8px;
-  text-align: left;
-}
 #question-box label {
   display: flex;
-  align-items: left;
-  gap: 2px; /* space between radio and text */
+  align-items: center;
+  gap: 6px;
   margin-bottom: 8px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background: darkblue;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: navy;
 }
