@@ -1,0 +1,424 @@
+// Predefined users (student logins)
+const users = {
+  "john": { password: "1234", class: "JSS1" },
+  "Memeh Favour": { password: "1234", class: "JSS2" },
+  "mary": { password: "5678", class: "SS1" }
+};
+
+// Lesson notes database
+const notesData = {
+  JSS1: {
+    Mathematics: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    English: {
+      1: { topic: "Nouns", content: "<p>Types of nouns and examples.</p><img src='images/nouns.jpg' alt='Nouns'>" },
+      2: { topic: "Verbs", content: "<p>Action words explained.</p><img src='images/verbs.jpg' alt='Verbs'>" }
+    },
+    Computer: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    BasicTech: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    BasicScience: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    BusinessStudies: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    HomeEconomics: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    SocialStudies: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    CRS: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    PHE: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    CCA: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    AgricScience: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    CivicEducation: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    }
+  },
+  JSS2: {
+    Mathematics: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    English: {
+      1: { topic: "Nouns", content: "<p>Types of nouns and examples.</p><img src='images/nouns.jpg' alt='Nouns'>" },
+      2: { topic: "Verbs", content: "<p>Action words explained.</p><img src='images/verbs.jpg' alt='Verbs'>" }
+    },
+    Computer: {
+      1: { topic: "Units of Storage in Computer", content: "<ul><li>Nibble = 4 bits,</li>-<li> Byte=8 bit-,</li>-<li> Kilobyte = 1,024 bytes,</li>-<li> Megabyte (MB) = 1,024 kilobyte,</li>-<li> Gigabyte (GB) = 1,024 megabytes<ul><img src='images/algebra.jpg' alt='image'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    BasicTechnology: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    BasicScience: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    BusinessStudies: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    HomeEconomics: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    SocialStudies: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    CRS: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    PHE: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    CCA: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    AgricScience: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    CivicEducation: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    }
+  },
+  JSS3: {
+    Mathematics: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    English: {
+      1: { topic: "Nouns", content: "<p>Types of nouns and examples.</p><img src='images/nouns.jpg' alt='Nouns'>" },
+      2: { topic: "Verbs", content: "<p>Action words explained.</p><img src='images/verbs.jpg' alt='Verbs'>" }
+    },
+    Computer: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    BasicTechnology: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    BasicScience: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    BusinessStudies: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    HomeEconomics: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    SocialStudies: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    CRS: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    PHE: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    CCA: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    AgricScience: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    CivicEducation: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    }
+  },
+  SS1: {
+    Mathematics: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    English: {
+      1: { topic: "Nouns", content: "<p>Types of nouns and examples.</p><img src='images/nouns.jpg' alt='Nouns'>" },
+      2: { topic: "Verbs", content: "<p>Action words explained.</p><img src='images/verbs.jpg' alt='Verbs'>" }
+    },
+    Computer: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Physics: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Chemistry: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Economics: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Marketing: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Government: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    CRS: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Biology: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Geography: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    AgricScience: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Literature: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    CivicEducation: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    }
+  },
+  SS2: {
+    Mathematics: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    English: {
+      1: { topic: "Nouns", content: "<p>Types of nouns and examples.</p><img src='images/nouns.jpg' alt='Nouns'>" },
+      2: { topic: "Verbs", content: "<p>Action words explained.</p><img src='images/verbs.jpg' alt='Verbs'>" }
+    },
+    Computer: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Physics: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Chemistry: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Economics: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Marketing: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Government: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    CRS: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Biology: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Geography: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    AgricScience: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Literature: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    CivicEducation: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    }
+  },
+  SS3: {
+    Mathematics: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    English: {
+      1: { topic: "Nouns", content: "<p>Types of nouns and examples.</p><img src='images/nouns.jpg' alt='Nouns'>" },
+      2: { topic: "Verbs", content: "<p>Action words explained.</p><img src='images/verbs.jpg' alt='Verbs'>" }
+    },
+    Computer: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Physics: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Chemistry: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Economics: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Marketing: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Government: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    CRS: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Biology: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Geography: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    AgricScience: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    Literature: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    },
+    CivicEducation: {
+      1: { topic: "Introduction to Algebra", content: "<p>Basic introduction to algebra for beginners.</p><img src='images/algebra.jpg' alt='Algebra'>" },
+      2: { topic: "Fractions", content: "<p>Understanding fractions and operations.</p><img src='images/fractions.jpg' alt='Fractions'>" }
+    }
+  }
+};
+
+const loginPage = document.getElementById("login-page");
+const notesPage = document.getElementById("notes-page");
+const loginBtn = document.getElementById("login-btn");
+const logoutBtn = document.getElementById("logout-btn");
+const loginError = document.getElementById("login-error");
+const studentClassLabel = document.getElementById("student-class");
+const accordion = document.getElementById("accordion");
+
+let currentUser = null;
+
+// Login function
+loginBtn.addEventListener("click", () => {
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (users[username] && users[username].password === password) {
+    currentUser = users[username];
+    loginPage.classList.add("hidden");
+    notesPage.classList.remove("hidden");
+    studentClassLabel.textContent = `${username.toUpperCase()} - ${currentUser.class}`;
+    loadNotes(currentUser.class);
+  } else {
+    loginError.textContent = "Invalid username or password";
+  }
+});
+
+// Logout function
+logoutBtn.addEventListener("click", () => {
+  currentUser = null;
+  notesPage.classList.add("hidden");
+  loginPage.classList.remove("hidden");
+});
+
+// Load notes into accordion
+function loadNotes(className) {
+  accordion.innerHTML = "";
+  const classNotes = notesData[className];
+
+  for (let subject in classNotes) {
+    const subjectItem = document.createElement("div");
+    subjectItem.classList.add("accordion-item");
+
+    const subjectHeader = document.createElement("div");
+    subjectHeader.classList.add("accordion-header");
+    subjectHeader.textContent = subject;
+    subjectItem.appendChild(subjectHeader);
+
+    const weeksContainer = document.createElement("div");
+    weeksContainer.classList.add("accordion-content");
+
+    for (let week in classNotes[subject]) {
+      const weekDiv = document.createElement("div");
+      weekDiv.classList.add("note");
+      weekDiv.innerHTML = `<strong>Week ${week}: ${classNotes[subject][week].topic}</strong>`;
+      weekDiv.addEventListener("click", () => {
+        weekDiv.innerHTML = `
+          <h4>MERCY BRITISH SCHOOLS</h4>
+          <p><strong>Class:</strong> ${className}</p>
+          <p><strong>Subject:</strong> ${subject}</p>
+          <p><strong>Week:</strong> ${week}</p>
+          <p><strong>Topic:</strong> ${classNotes[subject][week].topic}</p>
+          ${classNotes[subject][week].content}
+        `;
+      });
+      weeksContainer.appendChild(weekDiv);
+    }
+
+    subjectItem.appendChild(weeksContainer);
+    accordion.appendChild(subjectItem);
+
+    // Toggle accordion behavior
+    subjectHeader.addEventListener("click", () => {
+      weeksContainer.style.display = 
+        weeksContainer.style.display === "block" ? "none" : "block";
+    });
+  }
+}
