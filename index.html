@@ -1,21 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>School Portal - Home</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercy British Schools - Notes</title>
+  <link rel="stylesheet" href="styleIndex.css">
 </head>
 <body>
-  <h1>Welcome to School Portal</h1>
-  <nav>
-    <a href="exam.html">Take Exam</a> |
-    <a href="result.html">View Results</a>
-  </nav>
-
-  <h2>Lesson Notes for the Week</h2>
-  <div id="lesson-notes">
-    <!-- Will be populated by script.js -->
+  <!-- Login Page -->
+  <div id="login-page" class="page">
+    <h1>MERCY BRITISH SCHOOLS</h1>
+    <h2>Login</h2>
+    <label>Username:
+      <input type="text" id="username" autocomplete="off">
+    </label><br>
+    <label>Password:
+      <input type="password" id="password">
+    </label><br>
+    <button id="login-btn">Login</button>
+    <p id="login-error" class="error"></p>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Notes Page -->
+  <div id="notes-page" class="page hidden">
+    <header>
+      <h1>MERCY BRITISH SCHOOLS</h1>
+      <h2 id="student-class"></h2>
+      <button id="logout-btn">Logout</button>
+    </header>
+    
+    <h3>Lesson Notes</h3>
+    <div id="accordion"></div>
+  </div>
+
+  <script src="scriptIndex.js"></script>
 </body>
 </html>
