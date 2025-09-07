@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson Notes - God's Garden Schools</title>
+  <link rel="stylesheet" href="notestyle.css">
+</head>
+<body>
+  <header>
+    <h1>God's Garden Schools</h1>
+    <h2>Lesson Notes</h2>
+  </header>
+
+  <!-- Login Section -->
+  <section id="login-section">
+    <h3>Login</h3>
+    <label>Username:
+      <input type="text" id="username" list="user-list">
+      <datalist id="user-list"></datalist>
+    </label>
+    <label>Password:
+      <input type="password" id="password">
+    </label>
+    <button id="login-btn">Login</button>
+    <p id="login-error" style="color:red;"></p>
+  </section>
+
+  <!-- Student Dashboard -->
+  <section id="student-dashboard" class="hidden">
+    <h3>Welcome, <span id="student-name"></span></h3>
+    <div id="student-notes"></div>
+  </section>
+
+  <!-- Teacher/Admin Dashboard -->
+  <section id="manage-dashboard" class="hidden">
+    <h3>Welcome, <span id="manage-name"></span></h3>
+    <button id="add-note-btn">Add New Note</button>
+    <div id="manage-notes"></div>
+  </section>
+
+  <!-- Note Form (Teacher/Admin) -->
+  <section id="note-form" class="hidden">
+    <h3 id="form-title">Add/Edit Note</h3>
+    <form id="lesson-form">
+      <label>Class:
+        <select id="note-class">
+          <option>JSS1</option>
+          <option>JSS2</option>
+          <option>JSS3</option>
+        </select>
+      </label>
+      <label>Subject:
+        <input type="text" id="note-subject">
+      </label>
+      <label>Week:
+        <select id="note-week">
+          <option>1</option><option>2</option><option>3</option>
+          <option>4</option><option>5</option><option>6</option>
+          <option>7</option><option>8</option><option>9</option><option>10</option>
+        </select>
+      </label>
+      <label>Topic:
+        <input type="text" id="note-topic">
+      </label>
+      <label>Study Objectives:
+        <textarea id="note-objectives"></textarea>
+      </label>
+
+      <h4>Subtopics & Body</h4>
+      <div id="subtopics-container"></div>
+      <button type="button" id="add-subtopic">➕ Add Subtopic</button>
+      <br><br>
+      <button type="submit">Save Note</button>
+      <button type="button" id="cancel-note">Cancel</button>
+    </form>
+  </section>
+
+  <script src="notes.js"></script>
+</body>
+</html>

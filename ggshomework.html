@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>God's Garden Schools — Homework (CBT)</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="app-header">
+    <h1 class="school-title">GOD'S GARDEN SCHOOLS</h1>
+  </header>
+
+  <!-- Login -->
+  <section id="login-section" class="card">
+    <h2>Login</h2>
+    <label>Username:
+      <input type="text" id="username" list="user-list" autocomplete="off" />
+      <datalist id="user-list"></datalist>
+    </label>
+    <label>Password:
+      <input type="password" id="password" />
+    </label>
+    <button id="login-btn">Login</button>
+    <p id="login-error" class="error"></p>
+  </section>
+
+  <!-- Student Dashboard -->
+  <section id="student-dashboard" class="card hidden">
+    <h2>Welcome, <span id="student-name"></span></h2>
+    <div class="grid-2">
+      <label>Subject:
+        <select id="student-subject"></select>
+      </label>
+      <label>Week:
+        <select id="student-week"></select>
+      </label>
+    </div>
+    <button id="start-exam">Start Homework</button>
+
+    <div id="exam-container" class="hidden">
+      <div class="exam-topbar">
+        <p><strong>Time Left:</strong> <span id="timer">0</span> seconds</p>
+        <p><strong>Question:</strong> <span id="qpos">1</span>/<span id="qtotal">1</span></p>
+      </div>
+      <div id="question-box" class="question-box"></div>
+      <div class="nav-row">
+        <button id="prev-btn">Previous</button>
+        <button id="next-btn">Next</button>
+        <button id="submit-btn" class="hidden">Submit</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teacher Dashboard -->
+  <section id="teacher-dashboard" class="card hidden">
+    <h2>Welcome, <span id="teacher-name"></span></h2>
+
+    <h3>Manage Questions (Your Subjects)</h3>
+    <div class="grid-4">
+      <label>Class:
+        <select id="q-class">
+          <option value="JSS1">JSS1</option>
+          <option value="JSS2">JSS2</option>
+          <option value="JSS3">JSS3</option>
+          <option value="JSS1">SS1</option>
+          <option value="JSS2">SS2</option>
+          <option value="JSS3">SS3</option>      
+        </select>
+      </label>
+      <label>Subject:
+        <input type="text" id="q-subject" placeholder="e.g. Mathematics"/>
+      </label>
+      <label>Week:
+        <select id="q-week"></select>
+      </label>
+      <label>Image URL (optional):
+        <input type="text" id="q-image" placeholder="https://..."/>
+      </label>
+    </div>
+    <label>Question:
+      <textarea id="q-text" rows="2" placeholder="Enter question text"></textarea>
+    </label>
+    <div class="grid-4">
+      <label>Option A: <input type="text" id="optA"/></label>
+      <label>Option B: <input type="text" id="optB"/></label>
+      <label>Option C: <input type="text" id="optC"/></label>
+      <label>Option D: <input type="text" id="optD"/></label>
+    </div>
+    <label>Correct Answer (0=A, 1=B, 2=C, 3=D):
+      <input type="number" id="q-answer" min="0" max="3" />
+    </label>
+    <div class="btn-row">
+      <button id="save-question">Save Question</button>
+      <button id="cancel-edit" class="secondary hidden">Cancel Edit</button>
+    </div>
+
+    <div id="teacher-questions"></div>
+
+    <h3>Your Students' Results</h3>
+    <div id="teacher-results"></div>
+  </section>
+
+  <!-- Admin Dashboard -->
+  <section id="admin-dashboard" class="card hidden">
+    <h2>Welcome, Admin</h2>
+
+    <h3>Manage Questions (All Subjects)</h3>
+    <div class="grid-4">
+      <label>Class:
+        <select id="a-class">
+          <option value="JSS1">JSS1</option>
+          <option value="JSS2">JSS2</option>
+          <option value="JSS3">JSS3</option>
+        </select>
+      </label>
+      <label>Subject:
+        <input type="text" id="a-subject" placeholder="e.g. English"/>
+      </label>
+      <label>Week:
+        <select id="a-week"></select>
+      </label>
+      <label>Image URL (optional):
+        <input type="text" id="a-image" placeholder="https://..."/>
+      </label>
+    </div>
+    <label>Question:
+      <textarea id="a-text" rows="2" placeholder="Enter question text"></textarea>
+    </label>
+    <div class="grid-4">
+      <label>Option A: <input type="text" id="a-optA"/></label>
+      <label>Option B: <input type="text" id="a-optB"/></label>
+      <label>Option C: <input type="text" id="a-optC"/></label>
+      <label>Option D: <input type="text" id="a-optD"/></label>
+    </div>
+    <label>Correct Answer (0=A, 1=B, 2=C, 3=D):
+      <input type="number" id="a-answer" min="0" max="3" />
+    </label>
+    <div class="btn-row">
+      <button id="a-save-question">Save Question</button>
+      <button id="a-cancel-edit" class="secondary hidden">Cancel Edit</button>
+    </div>
+
+    <div id="admin-questions"></div>
+
+    <h3>All Students' Results</h3>
+    <div id="admin-results"></div>
+  </section>
+
+  <script src="script-homework.js"></script>
+</body>
+</html>
