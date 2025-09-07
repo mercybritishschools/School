@@ -69,7 +69,7 @@ body {
   }
   
   .news-item {
-    display: flex;
+    display: block;
     align-items: flex-start;
     margin-bottom: 1.5em;
     background: white;
@@ -97,4 +97,5 @@ body {
     color: white;
     margin-top: 2em;
   }
+
   
