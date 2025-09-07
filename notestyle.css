@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1em;
+    background: #f9f9f9;
+  }
+  
+  header {
+    background: #004080;
+    color: white;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  section {
+    margin-top: 1em;
+    padding: 1em;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  
+  input, textarea, select, button {
+    margin-top: 0.2em;
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1em;
+  }
+  
+  #subtopics-container {
+    margin-top: 1em;
+  }
+  
+  .subtopic-block {
+    border: 1px solid #ccc;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border-radius: 6px;
+    background: #f1f1f1;
+  }
+  
+  .subtopic-block textarea {
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+  
+  .subtopic-block input {
+    margin-bottom: 0.5em;
+  }
+  
