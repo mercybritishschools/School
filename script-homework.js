@@ -2,20 +2,43 @@
  * USERS (predefined)
  **********************************/
 const users = {
-  "Favour Memeh": { password: "pass123", role: "student", class: "JSS1" },
-  "Destiny Pretty": { password: "pass456", role: "student", class: "JSS2" },
-  "Uzoma Favour": { password: "pass789", role: "student", class: "JSS3" },
-  "Mr. Anonye": { password: "teach123", role: "teacher", subjects: ["Computer", "CRS"] },
-  "Mr. Ken": { password: "teach1", role: "teacher", subjects: ["Geography", "Marketing", "CCA"] },
-  "Mr. Stanley": { password: "teach2", role: "teacher", subjects: ["Agric", "Biology"] },
-  "Mr. Emmanuel": { password: "teach3", role: "teacher", subjects: [""] },
-  "Mr. Chimezie": { password: "teach4", role: "teacher", subjects: ["Mathematics", "Physics"] },
-  "Miss Favour": { password: "teach5", role: "teacher", subjects: ["Chemistry", "BasicScience"] },
-  "Miss Irene": { password: "teach6", role: "teacher", subjects: ["CivicEducation"] },
-  "Miss Chinenye": { password: "teach7", role: "teacher", subjects: ["SocialStudies"] },
-  "Miss Chidimma": { password: "teach8", role: "teacher", subjects: ["English", "Literature"] },
-  "Mr. Paul": { password: "teach9", role: "teacher", subjects: [""] },
-  "Miss Ifenyinwa": { password: "teach10", role: "teacher", subjects: ["Economics"] },
+  "Ugbechie Rejoice": { password: "Re@608", role: "student", class: "JSS1" },
+  "Chima Solomon": { password: "So@231", role: "student", class: "JSS1" },
+
+  "Victor Abel": { password: "Vic@869", role: "student", class: "JSS2" },
+  "Favour Memeh": { password: "Fav@981", role: "student", class: "JSS2" },
+  "Ifechukwude Miracle": { password: "Mi@052", role: "student", class: "JSS2" },
+  "Benard Gift": { password: "Gif@518", role: "student", class: "JSS2" },
+  "Okoro Ebube": { password: "Eb@008", role: "student", class: "JSS2" },
+  "Ogolo Success": { password: "Su@272", role: "student", class: "JSS2" },
+  "Dennis Ozioma": { password: "Oz@184", role: "student", class: "JSS2" },
+  "Effium Winifred": { password: "Win@678", role: "student", class: "JSS2" },
+  "Okafor Lucky": { password: "Lu@220", role: "student", class: "JSS2" },
+
+  "Jude Emmanuella Chioma": { password: "Em@184", role: "student", class: "JSS3" },
+  "Opara Chinonyerem Emmanuella": { password: "Em@766", role: "student", class: "JSS3" },
+  "Izudike Chukwuoma Dominion": { password: "Izu@900", role: "student", class: "JSS3" },
+  "Nyitar Timothy": { password: "Tim@156", role: "student", class: "JSS3" },
+  "Richard Dominion": { password: "Rich@513", role: "student", class: "JSS3" },
+  "Kingsley Grace": { password: "King@435", role: "student", class: "JSS3" },
+  "Henry Nzurike": { password: "Hen@600", role: "student", class: "JSS3" },
+  "Nnaka Benita Chiima": { password: "Ben@700", role: "student", class: "JSS3" },
+  "Emmade Joseph": { password: "Em@573", role: "student", class: "JSS3" },
+  "Dennis Ifechukwu": { password: "Ife@539", role: "student", class: "JSS3" },
+
+  "Effium Emmanuel": { password: "Em@678", role: "student", class: "SS3" },
+  
+  "Mr. Anonye": { password: "Ab@12", role: "teacher", subjects: ["Computer", "CRS"] },
+  "Mr. Ken": { password: "Ke#28", role: "teacher", subjects: ["Geography", "Marketing", "CCA"] },
+  "Mr. Stanley": { password: "St+50", role: "teacher", subjects: ["Agric", "Biology"] },
+  "Mr. Emmanuel": { password: "Em?77", role: "teacher", subjects: [""] },
+  "Mr. Chimezie": { password: "Me!98", role: "teacher", subjects: ["Mathematics", "Physics"] },
+  "Miss Favour": { password: "Fa$73", role: "teacher", subjects: ["Chemistry", "BasicScience"] },
+  "Miss Irene": { password: "Ir+99", role: "teacher", subjects: ["CivicEducation"] },
+  "Miss Chinenye": { password: "Ch?89", role: "teacher", subjects: ["SocialStudies"] },
+  "Miss Chidimma": { password: "Ch&99", role: "teacher", subjects: ["English", "Literature"] },
+  "Mr. Paul": { password: "Pa@20", role: "teacher", subjects: [""] },
+  "Miss Ifenyinwa": { password: "If$78", role: "teacher", subjects: ["Economics"] },
   "Admin": { password: "admin123", role: "admin" }
 };
 
@@ -1024,3 +1047,4 @@ function renderAdminResults() {
     container.innerHTML = "<p>No results recorded yet.</p>";
   }
 }
+
