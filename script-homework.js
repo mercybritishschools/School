@@ -4,7 +4,11 @@
 const users = {
   "Ugbechie Rejoice": { password: "Re@608", role: "student", class: "JSS1" },
   "Chima Solomon": { password: "So@231", role: "student", class: "JSS1" },
-
+  "Nwafechukwu-Cyril Victory": { password: "Vic@77", role: "student", class: "JSS1" },
+  "Oweazim Emmanuel Kosiso": { password: "Ko@73", role: "student", class: "JSS1" },
+  "Esther Elechukwu": { password: "Es@24", role: "student", class: "JSS1" },
+  "Uche Chidimma Marvelous": { password: "Ma@73", role: "student", class: "JSS1" },
+    
   "Victor Abel": { password: "Vic@869", role: "student", class: "JSS2" },
   "Favour Memeh": { password: "Fav@981", role: "student", class: "JSS2" },
   "Ifechukwude Miracle": { password: "Mi@052", role: "student", class: "JSS2" },
@@ -1048,6 +1052,7 @@ function renderAdminResults() {
     container.innerHTML = "<p>No results recorded yet.</p>";
   }
 }
+
 
 
 
