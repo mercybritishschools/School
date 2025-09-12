@@ -29,7 +29,11 @@ const users = {
   "Nnaka Benita Chiima": { password: "Ben@700", role: "student", class: "JSS3" },
   "Emmade Joseph": { password: "Em@573", role: "student", class: "JSS3" },
   "Dennis Ifechukwu": { password: "Ife@539", role: "student", class: "JSS3" },
-
+  "Chukwuemeka Michael": { password: "Mic@606", role: "student", class: "JSS3" },
+  "Chukwuemeka Michaella": { password: "Ela@66", role: "student", class: "JSS3" },
+  "Uti Chinedu David": { password: "Ut@506", role: "student", class: "JSS3" },
+  
+  
   "Effium Emmanuel": { password: "Em@678", role: "student", class: "SS3" },
   
   "Mr. Anonye": { password: "Ab@12", role: "teacher", subjects: ["Computer", "CRS"] },
@@ -1052,6 +1056,7 @@ function renderAdminResults() {
     container.innerHTML = "<p>No results recorded yet.</p>";
   }
 }
+
 
 
 
