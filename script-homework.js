@@ -40,7 +40,8 @@ const users = {
   "Nwafechukwu-Cyril Flourish": { password: "Flo@23", role: "student", class: "SS1" },
   
   "Effium Emmanuel": { password: "Em@678", role: "student", class: "SS3" },
-  
+  "Chinedu Obiakor": { password: "Chi@98", role: "student", class: "SS3" },
+    
   "Mr. Anonye": { password: "Ab@12", role: "teacher", subjects: ["Computer", "CRS"] },
   "Miss Deborah": { password: "Deb@12", role: "teacher", subjects: ["HomeEconomics", "BusinessStudies"] },
   "Mr. Ken": { password: "Ke#28", role: "teacher", subjects: ["Geography", "Marketing", "CCA"] },
@@ -1061,6 +1062,7 @@ function renderAdminResults() {
     container.innerHTML = "<p>No results recorded yet.</p>";
   }
 }
+
 
 
 
