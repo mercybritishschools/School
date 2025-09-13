@@ -1,10 +1,10 @@
-// script-homework2.js
-import { getDatabase, ref, push, get, child } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
+// script-homework.js
+import { getDatabase, ref, push, get, child, update, remove } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
 
 // ---------------------- Predefined Users ----------------------
 const users = {
   "Chinedu Obiakor": { password: "Chi@98", role: "student", class: "SS3" },
-  "Joy Okafor": { password: "Jo@45", role: "student", class: "JSS1" },
+  "Joy Okafor": { password: "Jo@45", role: "student", class: "JSS2" },
   "Mr. Anonye": { password: "Ab@12", role: "teacher", subjects: ["Computer", "CRS"] },
   "Mrs. Johnson": { password: "Mj@34", role: "teacher", subjects: ["English"] },
   "Admin": { password: "admin123", role: "admin" }
@@ -26,7 +26,6 @@ function weeksOptionsFill(selectEl) {
 
 // ---------------------- Init UI ----------------------
 document.addEventListener("DOMContentLoaded", () => {
-  // Fill all week dropdowns
   weeksOptionsFill($("student-week"));
   weeksOptionsFill($("q-week"));
   weeksOptionsFill($("a-week"));
@@ -58,7 +57,7 @@ $("login-btn").addEventListener("click", () => {
     $("student-name").textContent = uname;
     $("student-dashboard").classList.remove("hidden");
 
-    // Student subjects can be free entry or fixed list
+    // Student subjects list
     const subjSel = $("student-subject");
     subjSel.innerHTML = "";
     ["Mathematics", "English", "Computer", "CRS", "Biology", "Chemistry"].forEach(s => {
@@ -72,7 +71,7 @@ $("login-btn").addEventListener("click", () => {
     $("teacher-name").textContent = uname;
     $("teacher-dashboard").classList.remove("hidden");
 
-    // Teacher subjects restricted
+    // Restrict subjects to teacher's
     const subjInput = $("q-subject");
     subjInput.setAttribute("list", "teacher-subjects");
     let dl = document.createElement("datalist");
@@ -120,8 +119,11 @@ $("save-question").addEventListener("click", async () => {
   await push(refPath, questionData);
 
   alert("Question saved (teacher)!");
+  clearTeacherFields();
+  loadTeacherQuestions(cls, subject, week);
+});
 
-  // Clear fields
+function clearTeacherFields() {
   $("q-text").value = "";
   $("optA").value = "";
   $("optB").value = "";
@@ -129,7 +131,7 @@ $("save-question").addEventListener("click", async () => {
   $("optD").value = "";
   $("q-answer").value = "";
   $("q-image").value = "";
-});
+}
 
 // ---------------------- Save Admin Question ----------------------
 $("a-save-question").addEventListener("click", async () => {
@@ -158,8 +160,6 @@ $("a-save-question").addEventListener("click", async () => {
   await push(refPath, questionData);
 
   alert("Question saved (admin)!");
-
-  // Clear fields
   $("a-text").value = "";
   $("a-optA").value = "";
   $("a-optB").value = "";
@@ -169,7 +169,7 @@ $("a-save-question").addEventListener("click", async () => {
   $("a-image").value = "";
 });
 
-// ---------------------- Load Student Questions ----------------------
+// ---------------------- Student Exam Loader ----------------------
 $("start-exam").addEventListener("click", async () => {
   const uname = $("student-name").textContent;
   const student = users[uname];
@@ -178,11 +178,44 @@ $("start-exam").addEventListener("click", async () => {
   const week = $("student-week").value;
 
   const snapshot = await get(child(ref(db), `questions/${cls}/${subject}/${week}`));
-  if (snapshot.exists()) {
-    const questions = snapshot.val();
-    console.log("Loaded questions:", questions);
-    alert(`Questions loaded for ${subject}, Week ${week}. Check console for details.`);
-  } else {
+  if (!snapshot.exists()) {
     alert("No questions found for that subject/week.");
+    return;
   }
-});
+
+  const questions = Object.entries(snapshot.val()).map(([id, q]) => ({ id, ...q }));
+
+  // Render exam interface
+  let current = 0;
+  let answers = {};
+
+  $("exam-container").classList.remove("hidden");
+
+  function renderQ() {
+    const q = questions[current];
+    let html = `<p><strong>Q${current + 1}:</strong> ${q.text}</p>`;
+    if (q.image) html += `<img src="${q.image}" style="max-width:200px;display:block;">`;
+    q.options.forEach((opt, i) => {
+      const checked = answers[q.id] == i ? "checked" : "";
+      html += `<label><input type="radio" name="opt" value="${i}" ${checked}> ${opt}</label><br>`;
+    });
+    $("question-box").innerHTML = html;
+
+    document.querySelectorAll("input[name='opt']").forEach(inp => {
+      inp.addEventListener("click", () => {
+        answers[q.id] = parseInt(inp.value);
+      });
+    });
+
+    $("qpos").textContent = current + 1;
+    $("qtotal").textContent = questions.length;
+    $("submit-btn").classList.toggle("hidden", current !== questions.length - 1);
+  }
+
+  $("next-btn").onclick = () => {
+    if (current < questions.length - 1) { current++; renderQ(); }
+  };
+  $("prev-btn").onclick = () => {
+    if (current > 0) { current--; renderQ(); }
+  };
+  $("submit-btn").onclick = (
