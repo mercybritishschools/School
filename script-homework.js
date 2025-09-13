@@ -12,7 +12,7 @@ const users = {
   "Victor Abel": { password: "Vic@869", role: "student", class: "JSS2" },
   "Favour Memeh": { password: "Fav@981", role: "student", class: "JSS2" },
   "Ifechukwude Miracle": { password: "Mi@052", role: "student", class: "JSS2" },
-  "Benard Gift": { password: "Gif@518", role: "student", class: "JSS2" },
+  "Benard Gift": { password: "Gif@98", role: "student", class: "JSS2" },
   "Okoro Ebube": { password: "Eb@008", role: "student", class: "JSS2" },
   "Ogolo Success": { password: "Su@272", role: "student", class: "JSS2" },
   "Dennis Ozioma": { password: "Oz@184", role: "student", class: "JSS2" },
@@ -32,7 +32,9 @@ const users = {
   "Chukwuemeka Michael": { password: "Mic@606", role: "student", class: "JSS3" },
   "Chukwuemeka Michaella": { password: "Ela@66", role: "student", class: "JSS3" },
   "Uti Chinedu David": { password: "Ut@506", role: "student", class: "JSS3" },
-  
+  "Johnson Mmesomma Favour": { password: "Me@31", role: "student", class: "JSS3" },
+  "Nnanna Chikamso Rita": { password: "Rit@99", role: "student", class: "JSS3" },
+      
   
   "Effium Emmanuel": { password: "Em@678", role: "student", class: "SS3" },
   
@@ -1056,6 +1058,7 @@ function renderAdminResults() {
     container.innerHTML = "<p>No results recorded yet.</p>";
   }
 }
+
 
 
 
