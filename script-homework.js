@@ -35,6 +35,9 @@ const users = {
   "Johnson Mmesomma Favour": { password: "Me@31", role: "student", class: "JSS3" },
   "Nnanna Chikamso Rita": { password: "Rit@99", role: "student", class: "JSS3" },
       
+  "Ginika Maryann": { password: "Gin@34", role: "student", class: "SS1" },
+  "Albert Anabel": { password: "Ana@98", role: "student", class: "SS1" },
+  "Nwafechukwu-Cyril Flourish": { password: "Flo@23", role: "student", class: "SS1" },
   
   "Effium Emmanuel": { password: "Em@678", role: "student", class: "SS3" },
   
@@ -1058,6 +1061,7 @@ function renderAdminResults() {
     container.innerHTML = "<p>No results recorded yet.</p>";
   }
 }
+
 
 
 
