@@ -26,12 +26,61 @@ const analytics = getAnalytics(app);
 /* ----------------- Users ----------------- */
 /* Keep/update this object as you like; structure matches your request */
 const users = {
+  "Ugbechie Rejoice": { password: "Re@608", role: "student", class: "JSS1" },
+  "Chima Solomon": { password: "So@231", role: "student", class: "JSS1" },
+  "Nwafechukwu-Cyril Victory": { password: "Vic@77", role: "student", class: "JSS1" },
+  "Oweazim Emmanuel Kosiso": { password: "Ko@73", role: "student", class: "JSS1" },
+  "Esther Elechukwu": { password: "Es@24", role: "student", class: "JSS1" },
+  "Uche Chidimma Marvelous": { password: "Ma@73", role: "student", class: "JSS1" },
+    
+  "Victor Abel": { password: "Vic@869", role: "student", class: "JSS2" },
+  "Favour Memeh": { password: "Fav@981", role: "student", class: "JSS2" },
+  "Ifechukwude Miracle": { password: "Mi@052", role: "student", class: "JSS2" },
+  "Benard Gift": { password: "Gif@98", role: "student", class: "JSS2" },
+  "Okoro Ebube": { password: "Eb@008", role: "student", class: "JSS2" },
+  "Ogolo Success": { password: "Su@272", role: "student", class: "JSS2" },
+  "Dennis Ozioma": { password: "Oz@184", role: "student", class: "JSS2" },
+  "Effium Winifred": { password: "Win@678", role: "student", class: "JSS2" },
+  "Okafor Lucky": { password: "Lu@220", role: "student", class: "JSS2" },
+
+  "Jude Emmanuella Chioma": { password: "Em@184", role: "student", class: "JSS3" },
+  "Opara Chinonyerem Emmanuella": { password: "Em@766", role: "student", class: "JSS3" },
+  "Izudike Chukwuoma Dominion": { password: "Izu@900", role: "student", class: "JSS3" },
+  "Nyitar Timothy": { password: "Tim@156", role: "student", class: "JSS3" },
+  "Richard Dominion": { password: "Rich@513", role: "student", class: "JSS3" },
+  "Kingsley Grace": { password: "King@435", role: "student", class: "JSS3" },
+  "Henry Nzurike": { password: "Hen@600", role: "student", class: "JSS3" },
+  "Nnaka Benita Chiima": { password: "Ben@700", role: "student", class: "JSS3" },
+  "Emmade Joseph": { password: "Em@573", role: "student", class: "JSS3" },
+  "Dennis Ifechukwu": { password: "Ife@539", role: "student", class: "JSS3" },
+  "Chukwuemeka Michael": { password: "Mic@606", role: "student", class: "JSS3" },
+  "Chukwuemeka Michaella": { password: "Ela@66", role: "student", class: "JSS3" },
+  "Uti Chinedu David": { password: "Ut@506", role: "student", class: "JSS3" },
+  "Johnson Mmesomma Favour": { password: "Me@31", role: "student", class: "JSS3" },
+  "Nnanna Chikamso Rita": { password: "Rit@99", role: "student", class: "JSS3" },
+      
+  "Ginika Maryann": { password: "Gin@34", role: "student", class: "SS1" },
+  "Albert Anabel": { password: "Ana@98", role: "student", class: "SS1" },
+  "Nwafechukwu-Cyril Flourish": { password: "Flo@23", role: "student", class: "SS1" },
+  
+  "Effium Emmanuel": { password: "Em@678", role: "student", class: "SS3" },
   "Chinedu Obiakor": { password: "Chi@98", role: "student", class: "SS3" },
-  "Joy Okafor": { password: "Jo@45", role: "student", class: "JSS2" },
+    
   "Mr. Anonye": { password: "Ab@12", role: "teacher", subjects: ["Computer", "CRS"] },
-  "Mrs. Johnson": { password: "Mj@34", role: "teacher", subjects: ["English"] },
+  "Miss Deborah": { password: "Deb@12", role: "teacher", subjects: ["HomeEconomics", "BusinessStudies"] },
+  "Mr. Ken": { password: "Ke#28", role: "teacher", subjects: ["Geography", "Marketing", "CCA"] },
+  "Mr. Stanley": { password: "St+50", role: "teacher", subjects: ["Agric", "Biology"] },
+  "Mr. Emmanuel": { password: "Em?77", role: "teacher", subjects: [""] },
+  "Mr. Chimezie": { password: "Me!98", role: "teacher", subjects: ["Mathematics", "Physics"] },
+  "Miss Favour": { password: "Fa$73", role: "teacher", subjects: ["Chemistry", "BasicScience"] },
+  "Miss Irene": { password: "Ir+99", role: "teacher", subjects: ["CivicEducation"] },
+  "Miss Chinenye": { password: "Ch?89", role: "teacher", subjects: ["SocialStudies"] },
+  "Miss Chidimma": { password: "Ch&99", role: "teacher", subjects: ["English", "Literature"] },
+  "Mr. Paul": { password: "Pa@20", role: "teacher", subjects: [""] },
+  "Miss Ifenyinwa": { password: "If$78", role: "teacher", subjects: ["Economics"] },
   "Admin": { password: "admin123", role: "admin" }
 };
+
 
 let currentUser = null;
 
