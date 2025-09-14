@@ -73,8 +73,8 @@ const users = {
   "Mr. Emmanuel": { password: "Em?77", role: "teacher", subjects: [""] },
   "Mr. Chimezie": { password: "Me!98", role: "teacher", subjects: ["Mathematics", "Physics"] },
   "Miss Favour": { password: "Fa$73", role: "teacher", subjects: ["Chemistry", "BasicScience"] },
-  "Miss Irene": { password: "Ir+99", role: "teacher", subjects: ["CivicEducation"] },
-  "Miss Chinenye": { password: "Ch?89", role: "teacher", subjects: ["SocialStudies"] },
+  "Miss Irene": { password: "Ir+99", role: "teacher", subjects: ["CivicEducation", "Government"] },
+  "Miss Chinenye": { password: "Ch?89", role: "teacher", subjects: ["SocialStudies", "BasicTechnology"] },
   "Miss Chidimma": { password: "Ch&99", role: "teacher", subjects: ["English", "Literature"] },
   "Mr. Paul": { password: "Pa@20", role: "teacher", subjects: [""] },
   "Miss Ifenyinwa": { password: "If$78", role: "teacher", subjects: ["Economics"] },
@@ -132,7 +132,7 @@ function fillStudentSubjectOptions() {
   const subjSel = $("student-subject");
   if (!subjSel) return;
   subjSel.innerHTML = "";
-  ["Mathematics", "English", "Computer", "CRS", "Biology", "Chemistry"].forEach(s => {
+  ["Computer", "CRS", "HomeEconomics", "BusinessStudies", "Geography", "Marketing", "CCA", "Agric", "Biology", "Mathematics", "Physics", "Chemistry", "BasicScience", "CivicEducation", "Government", "SocialStudies", "BasicTechnology", "English", "Literature", "Economics"].forEach(s => {
     const o = document.createElement("option");
     o.value = s;
     o.textContent = s;
