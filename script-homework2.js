@@ -128,11 +128,20 @@ function fillLoginDatalist() {
 }
 
 /* ----------------- Student subject defaults ----------------- */
-function fillStudentSubjectOptions() {
+function fillStudentSubjectOptionsForUser(user) {
   const subjSel = $("student-subject");
   if (!subjSel) return;
   subjSel.innerHTML = "";
-  ["Computer", "CRS", "HomeEconomics", "BusinessStudies", "Geography", "Marketing", "CCA", "Agric", "Biology", "Mathematics", "Physics", "Chemistry", "BasicScience", "CivicEducation", "Government", "SocialStudies", "BasicTechnology", "English", "Literature", "Economics"].forEach(s => {
+
+  // Junior vs Senior subjects
+  const juniorSubs = ["Computer", "CRS", "HomeEconomics", "BusinessStudies",
+    "SocialStudies", "BasicTechnology", "BasicScience", "CCA", "CivicEducation", "Mathematics", "English"];
+  const seniorSubs = ["English", "Mathematics", "Biology", "Chemistry", "Physics",
+    "Economics", "Government", "Literature", "Geography", "Agric", "Marketing", "CRS"];
+
+  const subjects = user.class.startsWith("JS") ? juniorSubs : seniorSubs;
+
+  subjects.forEach(s => {
     const o = document.createElement("option");
     o.value = s;
     o.textContent = s;
@@ -140,13 +149,14 @@ function fillStudentSubjectOptions() {
   });
 }
 
+
 /* ----------------- DOMContentLoaded (initial setup) ----------------- */
 document.addEventListener("DOMContentLoaded", () => {
   fillWeeks("student-week");
   fillWeeks("q-week");
   fillWeeks("a-week");
   fillLoginDatalist();
-  fillStudentSubjectOptions();
+  
   // ensure save/edit buttons exist before attaching their handlers (they do in your HTML)
 });
 
@@ -169,6 +179,7 @@ if ($("login-btn")) {
       // show student dashboard
       $("student-name").textContent = uname;
       showSection("student-dashboard");
+      fillStudentSubjectOptionsForUser(user);
       // ensure student subjects exist (already filled on DOMContentLoaded)
     } else if (user.role === "teacher") {
       $("teacher-name").textContent = uname;
