@@ -28,7 +28,7 @@ const analytics = getAnalytics(app);
 const users = {
   "Chinedu Obiakor": { password: "Chi@98", role: "student", class: "SS3" },
   "Mr. Anonye": { password: "Ab@12", role: "teacher", subjects: ["Computer", "CRS"] },
-  "Admin": { password: "admin123", role: "admin" }
+  "Admin": { password: "admin111", role: "admin" }
 };
 
 let currentUser = null;
