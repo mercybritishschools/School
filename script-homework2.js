@@ -218,4 +218,83 @@ $("start-exam").addEventListener("click", async () => {
   $("prev-btn").onclick = () => {
     if (current > 0) { current--; renderQ(); }
   };
-  $("submit-btn").onclick = (
+  $("submit-btn").onclick = () => {
+    let score = 0;
+    questions.forEach(q => { if (answers[q.id] == q.answer) score++; });
+    alert(`Homework submitted!\nScore: ${score}/${questions.length}`);
+    $("exam-container").classList.add("hidden");
+    $("question-box").innerHTML = "";
+  };
+
+  renderQ();
+});
+
+// ---------------------- Teacher Question Loader/Editor ----------------------
+async function loadTeacherQuestions(cls, subject, week) {
+  const snapshot = await get(child(ref(db), `questions/${cls}/${subject}/${week}`));
+  const container = $("teacher-questions");
+  container.innerHTML = "<h4>Existing Questions:</h4>";
+
+  if (!snapshot.exists()) {
+    container.innerHTML += "<p>No questions yet.</p>";
+    return;
+  }
+
+  const questions = Object.entries(snapshot.val());
+  questions.forEach(([id, q]) => {
+    const div = document.createElement("div");
+    div.className = "q-item";
+    div.innerHTML = `
+      <p><strong>${q.text}</strong></p>
+      <p>Options: ${q.options.join(", ")}</p>
+      <p>Answer: ${q.answer}</p>
+      <button data-id="${id}" class="edit-btn">Edit</button>
+      <button data-id="${id}" class="del-btn">Delete</button>
+    `;
+    container.appendChild(div);
+  });
+
+  container.querySelectorAll(".edit-btn").forEach(btn => {
+    btn.onclick = () => editTeacherQuestion(cls, subject, week, btn.dataset.id);
+  });
+  container.querySelectorAll(".del-btn").forEach(btn => {
+    btn.onclick = async () => {
+      await remove(ref(db, `questions/${cls}/${subject}/${week}/${btn.dataset.id}`));
+      alert("Question deleted");
+      loadTeacherQuestions(cls, subject, week);
+    };
+  });
+}
+
+async function editTeacherQuestion(cls, subject, week, qid) {
+  const snapshot = await get(child(ref(db), `questions/${cls}/${subject}/${week}/${qid}`));
+  if (!snapshot.exists()) return;
+
+  const q = snapshot.val();
+  $("q-text").value = q.text;
+  $("optA").value = q.options[0];
+  $("optB").value = q.options[1];
+  $("optC").value = q.options[2];
+  $("optD").value = q.options[3];
+  $("q-answer").value = q.answer;
+  $("q-image").value = q.image || "";
+
+  $("save-question").onclick = async () => {
+    const newQ = {
+      text: $("q-text").value.trim(),
+      options: [
+        $("optA").value.trim(),
+        $("optB").value.trim(),
+        $("optC").value.trim(),
+        $("optD").value.trim()
+      ],
+      answer: $("q-answer").value,
+      image: $("q-image").value.trim() || null
+    };
+    await update(ref(db, `questions/${cls}/${subject}/${week}/${qid}`), newQ);
+    alert("Question updated!");
+    clearTeacherFields();
+    loadTeacherQuestions(cls, subject, week);
+  };
+}
+  
