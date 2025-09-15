@@ -60,7 +60,8 @@ const users = {
   "Uti Chinedu David": { password: "Ut@506", role: "student", class: "JSS3" },
   "Johnson Mmesomma Favour": { password: "Me@31", role: "student", class: "JSS3" },
   "Nnanna Chikamso Rita": { password: "Rit@99", role: "student", class: "JSS3" },
-      
+  "Ekene Goodness Chinemerem": { password: "Gd@99", role: "student", class: "JSS3" },
+         
   "Ginika Maryann": { password: "Gin@34", role: "student", class: "SS1" },
   "Albert Anabel": { password: "Ana@98", role: "student", class: "SS1" },
   "Nwafechukwu-Cyril Flourish": { password: "Flo@23", role: "student", class: "SS1" },
