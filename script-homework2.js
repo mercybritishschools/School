@@ -43,7 +43,8 @@ const users = {
   "Effium Winifred": { password: "Win@678", role: "student", class: "JSS2" },
   "Okafor Lucky": { password: "Lu@220", role: "student", class: "JSS2" },
   "Uche Michael": { password: "Mic@68", role: "student", class: "JSS2" },
-  
+  "Obalim Favour": { password: "Fav@68", role: "student", class: "JSS2" },
+    
   "Jude Emmanuella Chioma": { password: "Em@184", role: "student", class: "JSS3" },
   "Opara Chinonyerem Emmanuella": { password: "Em@766", role: "student", class: "JSS3" },
   "Izudike Chukwuoma Dominion": { password: "Izu@900", role: "student", class: "JSS3" },
