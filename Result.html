@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Results</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 18px; color: #222; }
+    h1 { margin-top: 0; }
+    h2, h3, h4 { margin: 8px 0; }
+    section { margin: 20px 0; }
+    table { border-collapse: collapse; margin: 8px 0; width: 100%; max-width: 900px; }
+    table, th, td { border: 1px solid #aaa; }
+    th, td { padding: 6px 10px; text-align: left; }
+    th { background: #f4f4f4; }
+    .export-btn {
+      display:inline-block; padding:8px 12px;
+      background:#0b6; color:#fff;
+      border-radius:6px; cursor:pointer; border:none;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>MERCY BRITISH SCHOOLS</h1>
+   <h2>Students' Results</h2>
+  <p style="color:#555">Generated: <span id="genTime"></span></p>
+  <button class="export-btn" id="exportCsv">Export CSV</button>
+
+  <div id="results"></div>
+
+  <!-- Firebase SDK (modular v12) -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+    import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
+
+    // Your Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyCT57WDFfW7oR4HmCUmpqib_mJhaGUQxws",
+      authDomain: "school-3a89e.firebaseapp.com",
+      databaseURL: "https://school-3a89e-default-rtdb.firebaseio.com",
+      projectId: "school-3a89e",
+      storageBucket: "school-3a89e.firebasestorage.app",
+      messagingSenderId: "656930590089",
+      appId: "1:656930590089:web:7edf7b849b7436928ae558",
+      measurementId: "G-RH3MKVQ90R"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    document.getElementById("genTime").textContent = new Date().toLocaleString();
+
+    const escapeHtml = (s) => {
+      if (s === null || s === undefined) return '';
+      return String(s).replace(/&/g,"&amp;")
+                      .replace(/</g,"&lt;")
+                      .replace(/>/g,"&gt;")
+                      .replace(/"/g,"&quot;")
+                      .replace(/'/g,"&#039;");
+    };
+
+    let ALL_RESULTS = null;
+
+    async function loadResults() {
+      try {
+        const snap = await get(ref(db, "results"));
+        ALL_RESULTS = snap.exists() ? snap.val() : null;
+
+        const container = document.getElementById("results");
+        container.innerHTML = "";
+
+        if (!ALL_RESULTS) {
+          container.innerHTML = "<p>No results recorded yet.</p>";
+          return;
+        }
+
+        const classes = Object.keys(ALL_RESULTS).sort();
+        for (const cls of classes) {
+          const sec = document.createElement("section");
+          sec.innerHTML = `<h2>Class: ${escapeHtml(cls)}</h2>`;
+          const subjects = Object.keys(ALL_RESULTS[cls]).sort();
+
+          for (const subj of subjects) {
+            const subjDiv = document.createElement("div");
+            subjDiv.innerHTML = `<h3>Subject: ${escapeHtml(subj)}</h3>`;
+            const weeks = Object.keys(ALL_RESULTS[cls][subj]).sort((a,b)=>Number(a)-Number(b));
+
+            for (const wk of weeks) {
+              const weekDiv = document.createElement("div");
+              weekDiv.innerHTML = `<h4>Week ${escapeHtml(wk)}</h4>`;
+
+              const results = ALL_RESULTS[cls][subj][wk];
+              let table = `<table>
+                <thead><tr>
+                  <th>Student</th><th>Score</th><th>Total</th><th>Submitted At</th>
+                </tr></thead><tbody>`;
+              const students = Object.keys(results).sort();
+              for (const stu of students) {
+                const r = results[stu];
+                let when = "";
+                if (r.timestamp) {
+                  try {
+                    const t = (typeof r.timestamp === "number") ? new Date(r.timestamp) : new Date(r.timestamp);
+                    when = isNaN(t.getTime()) ? String(r.timestamp) : t.toLocaleString();
+                  } catch { when = String(r.timestamp); }
+                }
+                table += `<tr>
+                  <td>${escapeHtml(stu)}</td>
+                  <td>${escapeHtml(r.score ?? "")}</td>
+                  <td>${escapeHtml(r.total ?? "")}</td>
+                  <td>${escapeHtml(when)}</td>
+                </tr>`;
+              }
+              table += "</tbody></table>";
+              weekDiv.innerHTML += table;
+              subjDiv.appendChild(weekDiv);
+            }
+            sec.appendChild(subjDiv);
+          }
+          container.appendChild(sec);
+        }
+      } catch (err) {
+        console.error("Error loading results:", err);
+        alert("Failed to load results — see console.");
+      }
+    }
+
+    function exportCSV() {
+      if (!ALL_RESULTS) { alert("No results to export"); return; }
+      const rows = [["Class","Subject","Week","Student","Score","Total","SubmittedAt"]];
+      for (const cls of Object.keys(ALL_RESULTS).sort()) {
+        for (const subj of Object.keys(ALL_RESULTS[cls]).sort()) {
+          for (const wk of Object.keys(ALL_RESULTS[cls][subj]).sort((a,b)=>Number(a)-Number(b))) {
+            for (const stu of Object.keys(ALL_RESULTS[cls][subj][wk]).sort()) {
+              const r = ALL_RESULTS[cls][subj][wk][stu];
+              let when = "";
+              if (r.timestamp) {
+                try {
+                  const t = (typeof r.timestamp === "number") ? new Date(r.timestamp) : new Date(r.timestamp);
+                  when = isNaN(t.getTime()) ? String(r.timestamp) : t.toLocaleString();
+                } catch { when = String(r.timestamp); }
+              }
+              rows.push([cls, subj, wk, stu, r.score ?? "", r.total ?? "", when]);
+            }
+          }
+        }
+      }
+      const csv = rows.map(r => r.map(cell => `"${String(cell).replace(/"/g,'""')}"`).join(",")).join("\n");
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "student-results.csv";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    document.getElementById("exportCsv").addEventListener("click", exportCSV);
+    loadResults();
+  </script>
+</body>
+</html>
