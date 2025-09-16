@@ -278,7 +278,7 @@
     }
 
     // ------- Protect result.html (teachers only) -------
-    if (location.pathname.endsWith("result.html")) {
+    if (location.pathname.endsWith("resultNOT.html")) {
       const user = JSON.parse(sessionStorage.getItem("loggedInUser") || "null");
       if (!user || user.role !== "teacher") {
         document.body.innerHTML = "<h2 style='text-align:center;margin-top:40px;'>Access Denied — Teachers only.</h2>";
