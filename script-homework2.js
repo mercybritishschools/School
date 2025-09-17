@@ -61,10 +61,16 @@ const users = {
   "Johnson Mmesomma Favour": { password: "Me@31", role: "student", class: "JSS3" },
   "Nnanna Chikamso Rita": { password: "Rit@99", role: "student", class: "JSS3" },
   "Ekene Goodness Chinemerem": { password: "Gd@99", role: "student", class: "JSS3" },
-         
+  "Ibeabuchi Matilda": { password: "Mat@406", role: "student", class: "JSS3" },
+                
   "Ginika Maryann": { password: "Gin@34", role: "student", class: "SS1" },
   "Albert Anabel": { password: "Ana@98", role: "student", class: "SS1" },
   "Nwafechukwu-Cyril Flourish": { password: "Flo@23", role: "student", class: "SS1" },
+
+  "Ibeabuchi Majesty": { password: "Maj@96", role: "student", class: "SS2" },
+  "Ugbala Success": { password: "Suc@906", role: "student", class: "SS2" },
+  "Ashioba Nathan": { password: "Nat@98", role: "student", class: "SS2" },
+               
   
   "Effium Emmanuel": { password: "Em@678", role: "student", class: "SS3" },
   "Chinedu Obiakor": { password: "Chi@98", role: "student", class: "SS3" },
