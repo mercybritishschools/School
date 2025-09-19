@@ -74,7 +74,8 @@ const users = {
   
   "Effium Emmanuel": { password: "Em@678", role: "student", class: "SS3" },
   "Chinedu Obiakor": { password: "Chi@98", role: "student", class: "SS3" },
-    
+  "Njidoka Uche": { password: "Uch@99", role: "student", class: "SS3" },
+      
   "Mr. Anonye": { password: "Ab@12", role: "teacher", subjects: ["Computer", "CRS"] },
   "Miss Deborah": { password: "Deb@12", role: "teacher", subjects: ["HomeEconomics", "BusinessStudies"] },
   "Mr. Ken": { password: "Ke#28", role: "teacher", subjects: ["Geography", "Marketing", "CCA"] },
