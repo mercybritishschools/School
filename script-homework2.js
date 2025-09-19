@@ -32,6 +32,9 @@ const users = {
   "Oweazim Emmanuel Kosiso": { password: "Ko@73", role: "student", class: "JSS1" },
   "Esther Elechukwu": { password: "Es@24", role: "student", class: "JSS1" },
   "Uche Chidimma Marvelous": { password: "Ma@73", role: "student", class: "JSS1" },
+  "Andre Augustine Inyanbe": { password: "Aug@111", role: "student", class: "JSS1" },
+  "Nweke Miracle": { password: "Mir@777", role: "student", class: "JSS1" },
+                              
     
   "Victor Abel": { password: "Vic@869", role: "student", class: "JSS2" },
   "Favour Memeh": { password: "Fav@981", role: "student", class: "JSS2" },
@@ -62,7 +65,8 @@ const users = {
   "Nnanna Chikamso Rita": { password: "Rit@99", role: "student", class: "JSS3" },
   "Ekene Goodness Chinemerem": { password: "Gd@99", role: "student", class: "JSS3" },
   "Ibeabuchi Matilda": { password: "Mat@406", role: "student", class: "JSS3" },
-                
+  "Nnakeh Miracle": { password: "Mir@419", role: "student", class: "JSS3" },
+                              
   "Ginika Maryann": { password: "Gin@34", role: "student", class: "SS1" },
   "Albert Anabel": { password: "Ana@98", role: "student", class: "SS1" },
   "Nwafechukwu-Cyril Flourish": { password: "Flo@23", role: "student", class: "SS1" },
