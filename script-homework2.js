@@ -91,7 +91,7 @@ const users = {
   "Miss Chinenye": { password: "Ch?89", role: "teacher", subjects: ["SocialStudies", "BasicTechnology"] },
   "Miss Chidimma": { password: "Ch&99", role: "teacher", subjects: ["English", "Literature"] },
   "Mr. Paul": { password: "Pa@20", role: "teacher", subjects: [""] },
-  "Miss Ifenyinwa": { password: "If$78", role: "teacher", subjects: ["Economics"] },
+  "Miss Ifeyinwa": { password: "If$78", role: "teacher", subjects: ["Economics"] },
   "Admin": { password: "admin123", role: "admin" }
 };
 
