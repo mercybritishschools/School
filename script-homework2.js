@@ -93,8 +93,10 @@ const users = {
  
   "Ibeabuchi Majesty": { password: "Maj@96", role: "student", class: "SS2" },
   "Ugbala Success": { password: "Suc@906", role: "student", class: "SS2" },
+  "Mmuodebe Amarachi Favour": { password: "Ama@666", role: "student", class: "SS2" },
   "Ashioba Nathan": { password: "Nat@98", role: "student", class: "SS2" },
-               
+  "Nosike Dominion": { password: "Dom@91", role: "student", class: "SS2" },
+
   
   "Effium Emmanuel": { password: "Em@678", role: "student", class: "SS3" },
   "Chinedu Obiakor": { password: "Chi@98", role: "student", class: "SS3" },
