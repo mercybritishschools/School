@@ -77,11 +77,20 @@ const users = {
   "Ekene Goodness Chinemerem": { password: "Gd@99", role: "student", class: "JSS3" },
   "Ibeabuchi Matilda": { password: "Mat@406", role: "student", class: "JSS3" },
   "Nnakeh Miracle": { password: "Mir@419", role: "student", class: "JSS3" },
-                              
+  "Lovely Osaigbovo": { password: "Osai@888", role: "student", class: "JSS3" },
+                                 
   "Ginika Maryann": { password: "Gin@34", role: "student", class: "SS1" },
   "Albert Anabel": { password: "Ana@98", role: "student", class: "SS1" },
   "Nwafechukwu-Cyril Flourish": { password: "Flo@23", role: "student", class: "SS1" },
+  "Chidimma Adelani": { password: "Chi@203", role: "student", class: "SS1" },
+  "Sebastian Praise": { password: "Prai@419", role: "student", class: "SS1" },
+  "Njidoka Chioma": { password: "Chi@504", role: "student", class: "SS1" },
+  "Anabel Albert": { password: "Ana@333", role: "student", class: "SS1" },
+  "Okorie Ekene": { password: "Eke@222", role: "student", class: "SS1" },
+  "Onyekachukwu Rejoice": { password: "Rej@111", role: "student", class: "SS1" },
 
+ 
+ 
   "Ibeabuchi Majesty": { password: "Maj@96", role: "student", class: "SS2" },
   "Ugbala Success": { password: "Suc@906", role: "student", class: "SS2" },
   "Ashioba Nathan": { password: "Nat@98", role: "student", class: "SS2" },
