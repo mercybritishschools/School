@@ -6,29 +6,6 @@
   <title>Lesson Notes - Mercy British Schools</title>
   <link rel="stylesheet" href="notestyle.css">
 
-  <!-- Firebase SDKs (Compat Version for easier integration) -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
-
-  <script>
-    // ✅ Your Firebase config (from console)
-    const firebaseConfig = {
-      apiKey: "AIzaSyCT57WDFfW7oR4HmCUmpqib_mJhaGUQxws",
-      authDomain: "school-3a89e.firebaseapp.com",
-      databaseURL: "https://school-3a89e-default-rtdb.firebaseio.com",
-      projectId: "school-3a89e",
-      storageBucket: "school-3a89e.firebasestorage.app",
-      messagingSenderId: "656930590089",
-      appId: "1:656930590089:web:7edf7b849b7436928ae558",
-      measurementId: "G-RH3MKVQ90R"
-    };
-
-    // ✅ Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.database();
-    firebase.analytics();
-  </script>
 </head>
 <body>
   <header>
@@ -102,6 +79,32 @@
       <button type="button" id="cancel-note">Cancel</button>
     </form>
   </section>
+
+
+<!-- Firebase SDKs (Compat Version for easier integration) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
+
+<script>
+  // ✅ Your Firebase config (from console)
+  const firebaseConfig = {
+    apiKey: "AIzaSyCT57WDFfW7oR4HmCUmpqib_mJhaGUQxws",
+    authDomain: "school-3a89e.firebaseapp.com",
+    databaseURL: "https://school-3a89e-default-rtdb.firebaseio.com",
+    projectId: "school-3a89e",
+    storageBucket: "school-3a89e.firebasestorage.app",
+    messagingSenderId: "656930590089",
+    appId: "1:656930590089:web:7edf7b849b7436928ae558",
+    measurementId: "G-RH3MKVQ90R"
+  };
+
+  // ✅ Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+  firebase.analytics();
+</script>
+
 
   <!-- Your main logic -->
   <script src="newNote.js"></script>
