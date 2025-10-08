@@ -103,6 +103,24 @@ const users = {
   "Admin": { password: "admin123", role: "admin" }
 };
 
+
+
+
+// This part creates the suggestion list dynamically
+function populateUserSuggestions() {
+  const datalist = document.getElementById("user-list");
+  datalist.innerHTML = ""; // clear old entries first
+  users.forEach(user => {
+    const option = document.createElement("option");
+    option.value = user.username;
+    datalist.appendChild(option);
+  });
+}
+
+// Call it once when the page loads
+document.addEventListener("DOMContentLoaded", populateUserSuggestions);
+
+
 // ----------------------------
 // Elements
 // ----------------------------
