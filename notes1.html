@@ -1,36 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Lesson Notes — Mercy British Schools</title>
-
+  <title>Lesson Notes - Mercy British Schools</title>
   <style>
-    /* Minimal styling for clarity */
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin: 0; padding: 1rem; max-width: 1100px; margin-left:auto; margin-right:auto; }
-    header { text-align:center; margin-bottom:1rem; }
-    section { margin: 0.5rem 0; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; background:#fafafa; }
+    /* Minimal styles - add your CSS file or extend as needed */
+    body { font-family: Arial, sans-serif; background:#f5f7fa; margin:0; padding:20px; }
+    header { text-align:center; margin-bottom:18px; }
     .hidden { display:none; }
-    label { display:block; margin:0.4rem 0; }
-    input[type="text"], input[type="password"], textarea, select { width:100%; padding:0.45rem; margin-top:0.2rem; box-sizing:border-box; }
-    button { padding:0.45rem 0.7rem; margin-top:0.5rem; }
-    .note-card { border:1px solid #eee; padding:0.6rem; margin:0.6rem 0; border-radius:6px; background:white; }
-    .subtopic-block { border:1px dashed #ccc; padding:0.4rem; margin:0.4rem 0; border-radius:6px; background:#fff; }
-    .controls { display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.5rem; }
-    .row { display:flex; gap:0.5rem; align-items:center; }
-    @media(min-width:760px){
-      .row > * { flex:1; }
-    }
-    img.note-img { max-width:100%; display:block; margin-top:0.4rem; border-radius:4px; }
+    section { background:#fff; padding:18px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.08); margin-bottom:16px; }
+    button { cursor:pointer; border:0; padding:8px 12px; border-radius:8px; background:#007bff; color:#fff; }
+    button.secondary { background:#6c757d; }
+    .note { margin:10px 0; padding:10px; border-left:4px solid #007bff; background:#fafafa; border-radius:6px; }
+    .accordion { width:100%; text-align:left; padding:10px; background:#007bff; color:#fff; border-radius:6px; margin-top:8px; border:0; }
+    .panel { display:none; padding:10px; background:#fff; margin-top:6px; border-radius:6px; border:1px solid #e0e0e0; }
+    input, select, textarea { width:100%; padding:8px; margin:6px 0 12px; border-radius:6px; border:1px solid #ccc; box-sizing:border-box; }
+    .subtopic-block { background:#f8f9fb; padding:10px; margin-bottom:10px; border-radius:6px; }
+    .editor { min-height:100px; border:1px dashed #bbb; padding:8px; border-radius:6px; background:white; }
+    .toolbar button { margin-right:6px; background:#17a2b8; }
+    img, video, audio { max-width:100%; display:block; margin-top:8px; border-radius:6px; }
+    .inline-form-wrapper { margin-top:10px; }
+    .actions { margin-top:8px; }
+    pre { background:#eee; padding:10px; border-radius:6px; overflow:auto; }
   </style>
+</head>
+<body>
 
-  <!-- Firebase Compat SDKs (must load before your code) -->
+  <header>
+    <h1>Mercy British Schools</h1>
+    <h2>Lesson Notes Portal</h2>
+  </header>
+
+  <!-- Login -->
+  <section id="login-section">
+    <h3>Login</h3>
+    <label>Username:
+      <input type="text" id="username" list="user-list" autocomplete="off" />
+      <datalist id="user-list"></datalist>
+    </label>
+    <label>Password:
+      <input type="password" id="password" />
+    </label>
+    <div class="actions">
+      <button id="login-btn">Login</button>
+      <span id="login-error" style="color:crimson; margin-left:12px;"></span>
+    </div>
+  </section>
+
+  <!-- Student Dashboard -->
+  <section id="student-dashboard" class="hidden">
+    <h3>Welcome, <span id="student-name"></span></h3>
+    <div id="student-accordion"></div>
+  </section>
+
+  <!-- Manage Dashboard (Teacher/Admin) -->
+  <section id="manage-dashboard" class="hidden">
+    <h3>Welcome, <span id="manage-name"></span></h3>
+    <div style="display:flex; gap:12px; align-items:center;">
+      <button id="add-note-btn">➕ Add New Note</button>
+      <button id="refresh-notes">Refresh</button>
+    </div>
+
+    <div id="manage-notes" style="margin-top:12px;"></div>
+  </section>
+
+  <!-- Template for inline note form -->
+  <template id="note-form-template">
+    <div class="inline-form-wrapper">
+      <form class="lesson-form">
+        <label>Class:
+          <select class="note-class">
+            <option>JSS1</option><option>JSS2</option><option>JSS3</option><option>SS1</option><option>SS2</option><option>SS3</option>
+          </select>
+        </label>
+        <label>Subject:<input class="note-subject" /></label>
+        <label>Week:
+          <select class="note-week">
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+          </select>
+        </label>
+        <label>Topic:<input class="note-topic" /></label>
+        <label>Study Objectives:<textarea class="note-objectives"></textarea></label>
+
+        <div>
+          <h4>Subtopics</h4>
+          <div class="subtopics-container"></div>
+          <div style="margin:10px 0;">
+            <button type="button" class="add-subtopic">➕ Add Subtopic</button>
+          </div>
+        </div>
+
+        <div style="margin-top:10px;">
+          <h4>Note-level visual aids (optional)</h4>
+          <label>Image: <input class="note-image" type="file" accept="image/*"></label>
+          <label>Video: <input class="note-video" type="file" accept="video/*"></label>
+          <label>Audio: <input class="note-audio" type="file" accept="audio/*"></label>
+        </div>
+
+        <div class="actions" style="margin-top:12px;">
+          <button type="submit" class="save-note">Save</button>
+          <button type="button" class="cancel-note secondary">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </template>
+
+  <!-- Firebase Compat SDKs -->
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
 
   <script>
-    // --- Your Firebase config (from your post) ---
+    // Your Firebase config (as you provided)
     const firebaseConfig = {
       apiKey: "AIzaSyCT57WDFfW7oR4HmCUmpqib_mJhaGUQxws",
       authDomain: "school-3a89e.firebaseapp.com",
@@ -41,107 +124,12 @@
       appId: "1:656930590089:web:7edf7b849b7436928ae558",
       measurementId: "G-RH3MKVQ90R"
     };
-
-    // Initialize Firebase (compat)
     firebase.initializeApp(firebaseConfig);
-    firebase.analytics && firebase.analytics();
     const db = firebase.database();
+    firebase.analytics && firebase.analytics();
   </script>
-</head>
-<body>
 
-  <header>
-    <h1>Mercy British Schools</h1>
-    <p style="margin:0;">Lesson Notes</p>
-  </header>
-
-  <!-- LOGIN -->
-  <section id="login-section">
-    <h3>Login</h3>
-    <label>
-      Username:
-      <input id="username" list="user-list" autocomplete="off" placeholder="Start typing username...">
-      <datalist id="user-list"></datalist>
-    </label>
-    <label>
-      Password:
-      <input id="password" type="password" placeholder="password">
-    </label>
-    <div class="controls">
-      <button id="login-btn">Login</button>
-      <button id="clear-btn" type="button">Clear</button>
-    </div>
-    <p id="login-error" style="color:#b00"></p>
-  </section>
-
-  <!-- STUDENT DASHBOARD -->
-  <section id="student-dashboard" class="hidden">
-    <h3>Welcome, <span id="student-name"></span></h3>
-    <div id="student-notes"></div>
-  </section>
-
-  <!-- MANAGE (Teacher / Admin) -->
-  <section id="manage-dashboard" class="hidden">
-    <h3>Welcome, <span id="manage-name"></span></h3>
-    <div class="controls">
-      <button id="add-note-btn">Add New Note</button>
-      <button id="refresh-btn">Refresh</button>
-      <button id="logout-btn" style="margin-left:auto;">Logout</button>
-    </div>
-    <div id="manage-notes"></div>
-  </section>
-
-  <!-- NOTE FORM -->
-  <section id="note-form" class="hidden">
-    <h3 id="form-title">Add / Edit Note</h3>
-    <form id="lesson-form">
-      <div class="row">
-        <label>
-          Class:
-          <select id="note-class">
-            <option>JSS1</option><option>JSS2</option><option>JSS3</option>
-            <option>SS1</option><option>SS2</option><option>SS3</option>
-          </select>
-        </label>
-
-        <label>
-          Subject:
-          <input id="note-subject" type="text" placeholder="e.g. Mathematics">
-        </label>
-      </div>
-
-      <div class="row">
-        <label>
-          Week:
-          <select id="note-week">
-            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
-            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
-          </select>
-        </label>
-
-        <label>
-          Topic:
-          <input id="note-topic" type="text" placeholder="Short topic/title">
-        </label>
-      </div>
-
-      <label>
-        Study Objectives:
-        <textarea id="note-objectives" rows="3"></textarea>
-      </label>
-
-      <h4>Subtopics (you can add multiple, include image URLs if needed)</h4>
-      <div id="subtopics-container"></div>
-      <div class="controls">
-        <button id="add-subtopic" type="button">➕ Add Subtopic</button>
-        <button id="save-note" type="submit">Save Note</button>
-        <button id="cancel-note" type="button">Cancel</button>
-      </div>
-    </form>
-  </section>
-
- <!-- Your main logic -->
-  <script src="notes1.js"></script>
-
+  <!-- main script (fixed & enhanced) -->
+  <script src="tester.js"></script>
 </body>
 </html>
