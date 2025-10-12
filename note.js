@@ -29,7 +29,14 @@ let users = {
   "Njidoka Divine-Peace": { password: "Div@785", role: "student", class: "JSS1" },                           
   "Eze Ekpereamaka Marian": { password: "Ekp@357", role: "student", class: "JSS1" },                           
   "Nwoye Blessing Chinaza": { password: "Ble@159", role: "student", class: "JSS1" },                           
-   
+  "Okeke Chidimma Favour": { password: "And@141", role: "student", class: "JSS1" },                           
+  "Chukwuma Divine": { password: "Fav@504", role: "student", class: "JSS1" },                           
+  "Onofa Benedicta": { password: "Chil@114", role: "student", class: "JSS1" },                           
+  "Odiri Precious": { password: "Tyo@963", role: "student", class: "JSS1" },                           
+  "Chinedu Chiagozie": { password: "Vin@601", role: "student", class: "JSS1" },                           
+  "Dajon Glory": { password: "Div@785", role: "student", class: "JSS1" },                           
+  "Victor Chima": { password: "Ekp@357", role: "student", class: "JSS1" },                           
+
   "Victor Abel": { password: "Vic@869", role: "student", class: "JSS2" },
   "Favour Memeh": { password: "Fav@981", role: "student", class: "JSS2" },
   "Ifechukwude Miracle": { password: "Mi@052", role: "student", class: "JSS2" },
