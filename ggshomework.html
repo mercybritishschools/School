@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>God's Garden Schools — Homework (CBT)</title>
+  <title>Mercy British Schools — Homework (CBT)</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <header class="app-header">
-    <h1 class="school-title">GOD'S GARDEN SCHOOLS</h1>
+    <h1 class="school-title">MERCY BRITISH SCHOOLS</h1>
   </header>
 
   <!-- Login -->
@@ -63,9 +63,9 @@
           <option value="JSS1">JSS1</option>
           <option value="JSS2">JSS2</option>
           <option value="JSS3">JSS3</option>
-          <option value="JSS1">SS1</option>
-          <option value="JSS2">SS2</option>
-          <option value="JSS3">SS3</option>      
+          <option value="SS1">SS1</option>
+          <option value="SS2">SS2</option>
+          <option value="SS3">SS3</option>      
         </select>
       </label>
       <label>Subject:
@@ -112,6 +112,10 @@
           <option value="JSS1">JSS1</option>
           <option value="JSS2">JSS2</option>
           <option value="JSS3">JSS3</option>
+          <option value="SS1">SS1</option>
+          <option value="SS2">SS2</option>
+          <option value="SS3">SS3</option>
+        
         </select>
       </label>
       <label>Subject:
@@ -146,7 +150,35 @@
     <h3>All Students' Results</h3>
     <div id="admin-results"></div>
   </section>
+  
+  
+  
+<script type="module">
+  // Import Firebase functions
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+  import { getDatabase } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";
 
-  <script src="script-homework.js"></script>
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCT57WDFfW7oR4HmCUmpqib_mJhaGUQxws",
+    authDomain: "school-3a89e.firebaseapp.com",
+    databaseURL: "https://school-3a89e-default-rtdb.firebaseio.com",
+    projectId: "school-3a89e",
+    storageBucket: "school-3a89e.firebasestorage.app",
+    messagingSenderId: "656930590089",
+    appId: "1:656930590089:web:7edf7b849b7436928ae558",
+    measurementId: "G-RH3MKVQ90R"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  const analytics = getAnalytics(app);
+</script>
+
+<script src="ggsHomework.js" type="module"></script>
+
+
 </body>
 </html>
