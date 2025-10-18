@@ -111,7 +111,7 @@ const users = {
       
   "Mr. Solomon": { password: "Ab@12", role: "teacher", subjects: ["Computer", "CRS"] },
   "Miss Deborah": { password: "Deb@12", role: "teacher", subjects: ["HomeEconomics", "BusinessStudies"] },
-  "Mr. Ken": { password: "Ke#28", role: "teacher", subjects: ["Geography", "Marketing", "CCA"] },
+  "Mr. Kenny": { password: "Ke#28", role: "teacher", subjects: ["Geography", "Marketing", "CCA"] },
   "Mr. Stanley": { password: "St+50", role: "teacher", subjects: ["Agric", "Biology"] },
   "Mr. Emmanuel": { password: "Em?77", role: "teacher", subjects: [""] },
   "Mr. Chimezie": { password: "Me!98", role: "teacher", subjects: ["Mathematics", "Physics"] },
