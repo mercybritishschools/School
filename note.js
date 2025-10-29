@@ -44,10 +44,11 @@ let users = {
   "Okoro Ebube": { password: "Eb@008", role: "student", class: "JSS2" },
   "Ogolo Success": { password: "Su@272", role: "student", class: "JSS2" },
   "Dennis Ozioma": { password: "Oz@184", role: "student", class: "JSS2" },
-  "Effium Winifred": { password: "Win@678", role: "student", class: "JSS2" },
+  "Effiom Winifred": { password: "Win@678", role: "student", class: "JSS2" },
   "Okafor Lucky": { password: "Lu@220", role: "student", class: "JSS2" },
   "Uche Michael": { password: "Mic@68", role: "student", class: "JSS2" },
   "Obalim Favour": { password: "Fav@68", role: "student", class: "JSS2" },
+  "Mbalisigwe Favour": { password: "Fav@888", role: "student", class: "JSS2" },
   "Thomas Magnus Chibuzor Uti": { password: "Mag@655", role: "student", class: "JSS2" },
     
   "Jude Emmanuella Chioma": { password: "Em@184", role: "student", class: "JSS3" },
