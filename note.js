@@ -50,6 +50,7 @@ let users = {
   "Obalim Favour": { password: "Fav@68", role: "student", class: "JSS2" },
   "Mbalisigwe Favour": { password: "Fav@888", role: "student", class: "JSS2" },
   "Samuel Favour": { password: "Fav@999", role: "student", class: "JSS2" },
+  "Obieze Ifeyinwa": { password: "Ify@68", role: "student", class: "JSS2" },
   "Thomas Magnus Chibuzor Uti": { password: "Mag@655", role: "student", class: "JSS2" },
     
   "Jude Emmanuella Chioma": { password: "Em@184", role: "student", class: "JSS3" },
