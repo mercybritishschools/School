@@ -34,7 +34,7 @@ let users = {
   "Onofa Benedicta": { password: "Bene@14", role: "student", class: "JSS1" },                           
   "Odiri Precious": { password: "Pre@93", role: "student", class: "JSS1" },                           
   "Chinedu Chiagozie": { password: "Edu@61", role: "student", class: "JSS1" },                           
-  "Dajon Glory": { password: "Glo@75", role: "student", class: "JSS1" },                           
+  "Dajan Glory": { password: "Glo@75", role: "student", class: "JSS1" },                           
   "Victor Chima": { password: "Vic@37", role: "student", class: "JSS1" },                           
 
   "Victor Abel": { password: "Vic@869", role: "student", class: "JSS2" },
