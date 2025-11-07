@@ -75,7 +75,7 @@ const users = {
   "Richard Dominion": { password: "Rich@513", role: "student", class: "JSS3" },
   "Kingsley Grace": { password: "King@435", role: "student", class: "JSS3" },
   "Henry Nzurike": { password: "Hen@600", role: "student", class: "JSS3" },
-  "Nnaka Benita Chiima": { password: "Ben@700", role: "student", class: "JSS3" },
+  "Nnaka Benita Chioma": { password: "Ben@700", role: "student", class: "JSS3" },
   "Emmade Joseph": { password: "Em@573", role: "student", class: "JSS3" },
   "Dennis Ifechukwu": { password: "Ife@539", role: "student", class: "JSS3" },
   "Chukwuemeka Michael": { password: "Mic@606", role: "student", class: "JSS3" },
@@ -87,7 +87,9 @@ const users = {
   "Ibeabuchi Matilda": { password: "Mat@406", role: "student", class: "JSS3" },
   "Nnakeh Miracle": { password: "Mir@419", role: "student", class: "JSS3" },
   "Lovely Osaigbovo": { password: "Osai@888", role: "student", class: "JSS3" },
-                                 
+  "Johnson Mmesoma": { password: "Mmeso@808", role: "student", class: "JSS3" },
+
+                        
   "Ginika Maryann": { password: "Gin@34", role: "student", class: "SS1" },
   "Albert Anabel": { password: "Ana@98", role: "student", class: "SS1" },
   "Nwafechukwu-Cyril Flourish": { password: "Flo@23", role: "student", class: "SS1" },
