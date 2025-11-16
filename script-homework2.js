@@ -87,7 +87,7 @@ const users = {
   "Ibeabuchi Matilda": { password: "Mat@406", role: "student", class: "JSS3" },
   "Nnakeh Miracle": { password: "Mir@419", role: "student", class: "JSS3" },
   "Lovely Osaigbovo": { password: "Osai@888", role: "student", class: "JSS3" },
-
+  "Uduaka Precious": { password: "udu@808", role: "student", class: "JSS3" },
                         
   "Ginika Maryann": { password: "Gin@34", role: "student", class: "SS1" },
   "Albert Anabel": { password: "Ana@98", role: "student", class: "SS1" },
