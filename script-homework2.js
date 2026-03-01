@@ -73,7 +73,7 @@ const users = {
   "Nkiru Idu": { password: "Idu@65", role: "student", class: "JSS2" },
   "Uzoma Wisdom": { password: "Wiz@55", role: "student", class: "JSS2" },
   "Ogbonna Faith": { password: "Fa@56", role: "student", class: "JSS2" },
-  "Ekenem Dumku": { password: "Eke@57", role: "student", class: "JSS2" },
+  "Ekenem Dunkwu": { password: "Eke@57", role: "student", class: "JSS2" },
           
   "Jude Emmanuella Chioma": { password: "Em@184", role: "student", class: "JSS3" },
   "Opara Chinonyerem Emmanuella": { password: "Em@766", role: "student", class: "JSS3" },
