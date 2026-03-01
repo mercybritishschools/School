@@ -187,9 +187,9 @@ function fillStudentSubjectOptionsForUser(user) {
   subjSel.innerHTML = "";
 
   // Junior vs Senior subjects
-  const juniorSubs = ["Computer", "CRS", "Agric", "HomeEconomics", "BusinessStudies",
+  const juniorSubs = ["DigitalTech", "Computer", "CRS", "Agric", "HomeEconomics", "BusinessStudies",
     "SocialStudies", "BasicTechnology", "BasicScience", "CCA", "CivicEducation", "Mathematics", "English", "PHE"];
-  const seniorSubs = ["Computer", "English", "Mathematics", "Biology", "Chemistry", "Physics",
+  const seniorSubs = ["DigitalTech", "Computer", "English", "Mathematics", "Biology", "Chemistry", "Physics",
   "Economics", "Government", "CivicEducation", "Literature", "Geography", "Agric", "Marketing", "CRS"];
 
   const subjects = user.class.startsWith("JS") ? juniorSubs : seniorSubs;
