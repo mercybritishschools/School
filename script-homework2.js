@@ -105,7 +105,8 @@ const users = {
   "Anabel Albert": { password: "Ana@333", role: "student", class: "SS1" },
   "Okorie Ekene": { password: "Eke@222", role: "student", class: "SS1" },
   "Onyekachukwu Rejoice": { password: "Rej@111", role: "student", class: "SS1" },
-
+  "Mary": { password: "My@101", role: "student", class: "SS1" },
+  
  
  
   "Ibeabuchi Majesty": { password: "Maj@96", role: "student", class: "SS2" },
