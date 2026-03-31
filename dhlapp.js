@@ -1,8 +1,8 @@
 /******** FIREBASE CONFIG ********/
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID"
+  const firebaseConfig = {
+  apiKey: "AIzaSyDzf9R9BFmUgb1fGU5KYRS-onhla3jPEbw",
+  authDomain: "dhlesson-e8c85.firebaseapp.com",
+  projectId: "dhlesson-e8c85"
 };
 
 firebase.initializeApp(firebaseConfig);
