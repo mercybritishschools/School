@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online School Portal</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+<h1>Online School Portal</h1>
+
+<!-- AUTH -->
+<section id="authSection">
+  <h2>Login</h2>
+  <input id="loginEmail" placeholder="Email or Phone">
+  <input id="loginPassword" type="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+
+  <h2>Sign Up</h2>
+  <input id="signupEmail" placeholder="Email (or leave blank)">
+  <input id="signupPhone" placeholder="Phone (or leave blank)">
+  <input id="signupPassword" type="password" placeholder="Password">
+
+  <select id="signupRole">
+    <option value="student">Student</option>
+    <option value="teacher">Teacher</option>
+  </select>
+
+  <input id="signupClass" placeholder="Class (e.g SS1)">
+  <input id="signupSubjects" placeholder="Subjects (comma separated)">
+
+  <button onclick="signup()">Sign Up</button>
+</section>
+
+<!-- ADMIN DASHBOARD -->
+<section id="adminDashboard" class="hidden">
+  <h2>Admin Dashboard</h2>
+
+  <h3>Pending Approvals</h3>
+  <div id="pendingUsers"></div>
+
+  <h3>All Users</h3>
+  <div id="allUsers"></div>
+
+  <button onclick="logout()">Logout</button>
+</section>
+
+<!-- TEACHER DASHBOARD -->
+<section id="teacherDashboard" class="hidden">
+  <h2>Teacher Dashboard</h2>
+
+  <input id="lessonSubject" placeholder="Subject">
+  <input id="lessonClass" placeholder="Class">
+  <input id="lessonWeek" placeholder="Week">
+
+  <textarea id="lessonNote" placeholder="Lesson Note (HTML allowed)"></textarea>
+  <input id="videoUrl" placeholder="Video Link">
+
+  <textarea id="objectiveQuestions" placeholder='Objectives (JSON format)'></textarea>
+  <textarea id="theoryQuestions" placeholder="Theory Questions (one per line)"></textarea>
+
+  <button onclick="saveLesson()">Save Lesson</button>
+
+  <h3>Student Results</h3>
+  <div id="teacherResults"></div>
+
+  <button onclick="logout()">Logout</button>
+</section>
+
+<!-- STUDENT DASHBOARD -->
+<section id="studentDashboard" class="hidden">
+  <h2>Student Dashboard</h2>
+
+  <input id="studentSubject" placeholder="Subject">
+  <input id="studentWeek" placeholder="Week">
+  <button onclick="loadLesson()">Load Lesson</button>
+
+  <div id="lessonContent"></div>
+
+  <button onclick="submitCBT()">Submit CBT</button>
+
+  <div id="studentResult"></div>
+
+  <button onclick="logout()">Logout</button>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
